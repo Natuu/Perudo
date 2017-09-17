@@ -38,11 +38,11 @@ $('.addDice').click(function() {
     {
         dice = Math.floor(Math.random() * 6) + 1;
         dices.push(dice);
+
+        showDice(dices);
+
+        socket.emit('add_dice', {});
     }
-
-    showDice(dices);
-
-    socket.emit('add_dice', {});
 });
 
 $('.removeDice').click(function() {
@@ -50,11 +50,11 @@ $('.removeDice').click(function() {
     if (dices.length > 1 && !cache)
     {
         dices.splice(0,1);
+
+        showDice(dices);
+
+        socket.emit('remove_dice', {});
     }
-
-    showDice(dices);
-
-    socket.emit('remove_dice', {});
 });
 
 $('.cacher').click(function() {
