@@ -1,0 +1,11 @@
+{
+  "name": "Perusisar",
+  "version": "0.1.0",
+  "description": "Le perudo de l'esisar",
+  "main": "app.js",
+  "dependencies": {
+    "socket.io": "^2.0.3",
+    "express": "^4.4.5",
+    "ent": "^2.2.0"
+  }
+}
