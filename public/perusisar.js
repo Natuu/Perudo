@@ -2,7 +2,7 @@
 
 // Il faut commencer par charger /socket.io/socket.io.js
 
-var socket = io.connect('http://localhost:8080');
+var socket = io.connect('https://perusisar.herokuapp.com');
 
 var pseudo = prompt('Quel est votre pseudo ?');
 var room = prompt('Dans quelle partie jouer ?');
