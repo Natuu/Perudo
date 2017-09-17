@@ -13,8 +13,16 @@ app.get('/', function (req, res) {
 
 io.sockets.on('connection', function (socket, username) {
     socket.on('new_client', function(message) {
-        socket.username =  ent.encode(message.username);
-        socket.room = ent.encode(message.room);
+        if (message.username == null || message.room == null)
+        {
+          message.username =  "Anonyme";
+          message.room = "1984";
+        }
+        else
+        {
+          socket.username =  ent.encode(message.username);
+          socket.room = ent.encode(message.room);
+        }
 
         socket.join(socket.room);
         socket.to(socket.room).emit('new_user', {username: socket.username});
