@@ -255,3 +255,13 @@ footer
 	margin: 0 0 8px 0;
 	text-align: left;
 }
+
+
+@media (max-height:560px) {
+
+footer {height: 156px;}
+.chat {height: 140px;}
+.buttons {bottom: 190px;}
+
+
+}
