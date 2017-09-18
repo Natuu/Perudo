@@ -7,6 +7,12 @@ var socket = io.connect('https://perusisar.herokuapp.com');
 var pseudo = prompt('Quel est votre pseudo ?');
 var room = prompt('Dans quelle partie jouer ?');
 
+if (pseudo == null || room == null)
+{
+  pseudo =  "Anonyme";
+  room = "1984";
+}
+
 socket.emit('new_client', {username: pseudo, room: room});
 
 
